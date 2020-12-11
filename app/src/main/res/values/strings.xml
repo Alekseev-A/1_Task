@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">1_Task</string>
+    <plurals name="text_plurals">
+        <item quantity="one">Button clicked %1$d time</item>
+        <item quantity="other">Button clicked %1$d times</item>
+    </plurals>
+</resources>
