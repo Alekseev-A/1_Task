@@ -4,16 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
-    private val clicks = MutableLiveData(0)
+class MainViewModel(counter: Int) : ViewModel() {
+
+    private val counterMutableLiveData = MutableLiveData(counter)
+
+    val counterLiveData: LiveData<Int> get() = counterMutableLiveData
 
     fun incrementClicks() {
-        clicks.value = clicks.value?.plus(1)
+        counterMutableLiveData.value = counterMutableLiveData.value?.plus(1)
     }
-
-    fun setClicks(from: Int) {
-        clicks.value = from
-    }
-
-    fun getClicks(): LiveData<Int> = clicks
 }
